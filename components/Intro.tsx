@@ -5,47 +5,46 @@ import { ChevronDown } from "lucide-react";
 
 export default function Intro() {
   return (
-    <section className="relative h-screen w-full flex flex-col items-center justify-center overflow-hidden bg-[#FAF8F5]">
-      {/* 배경 텍스처 원 */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[340px] h-[340px] rounded-full border border-[#E8D5B8]/40" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[280px] h-[280px] rounded-full border border-[#E8D5B8]/30" />
-
-      {/* 사진 */}
+    <section className="min-h-screen bg-white flex flex-col">
+      {/* 액자 형태 사진: 상·좌·우에 여백 */}
       <motion.div
-        initial={{ opacity: 0, scale: 0.94 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 1.4, ease: [0.22, 1, 0.36, 1] }}
-        className="relative z-10 w-44 h-60 rounded-[20px] bg-[#E8E0D8] shadow-[0_8px_40px_rgba(0,0,0,0.08)] overflow-hidden mb-9 flex items-center justify-center"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1.5, ease: "easeOut" }}
+        className="mx-6 mt-10"
       >
-        <span className="font-sans text-[10px] tracking-[0.3em] text-[#C9A96E]/60 uppercase">Photo</span>
+        <div className="aspect-[3/4] overflow-hidden bg-[#F5F3F0] rounded-sm">
+          {/* public/images/photo-main.jpeg 로 교체 */}
+          <div className="w-full h-full flex items-center justify-center">
+            <span className="font-sans text-[10px] tracking-[0.35em] text-[#CCCCCC] uppercase">
+              Photo
+            </span>
+          </div>
+        </div>
       </motion.div>
 
-      {/* 이름 */}
+      {/* 이름 & 날짜 */}
       <motion.div
-        initial={{ opacity: 0, y: 16 }}
+        initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1, delay: 0.35, ease: [0.22, 1, 0.36, 1] }}
-        className="relative z-10 text-center px-8"
+        transition={{ duration: 1, delay: 0.7, ease: "easeOut" }}
+        className="flex flex-col items-center text-center pt-7 pb-4 px-6"
       >
-        <p className="font-sans text-[10px] tracking-[0.45em] text-[#C9A96E] mb-4 uppercase">
-          We Are Getting Married
+        {/* 영문 이름: serif italic */}
+        <p className="font-serif italic text-[24px] tracking-wider text-[#444444] leading-none">
+          Jinhyeok &amp; Sumin
+        </p>
+        {/* 한글 이름: 고딕 */}
+        <p className="font-sans text-[11px] tracking-[0.35em] text-[#999999] mt-2">
+          탁진혁 · 조수민
         </p>
 
-        <h1 className="font-serif font-light text-[#333333] leading-none" style={{ fontSize: "clamp(36px, 9vw, 52px)", letterSpacing: "0.15em" }}>
-          탁진혁
-          <span className="mx-3 text-[#C9A96E]" style={{ fontSize: "0.55em" }}>♥</span>
-          조수민
-        </h1>
+        <div className="my-5 w-6 h-px bg-[#E0E0E0]" />
 
-        <div className="mt-6 flex items-center justify-center gap-3">
-          <div className="h-px w-8 bg-[#E8D5B8]" />
-          <p className="font-sans text-[11px] tracking-[0.25em] text-[#888888]">
-            2026 · 09 · 13 · SUN
-          </p>
-          <div className="h-px w-8 bg-[#E8D5B8]" />
-        </div>
-
-        <p className="mt-3 font-sans text-[11px] tracking-[0.2em] text-[#AAAAAA]">
+        <p className="font-sans text-[11px] tracking-[0.22em] text-[#BBBBBB]">
+          2026 . 09 . 13 . SUN
+        </p>
+        <p className="font-sans text-[11px] tracking-[0.15em] text-[#CCCCCC] mt-1">
           더 컨벤션 잠실
         </p>
       </motion.div>
@@ -54,15 +53,14 @@ export default function Intro() {
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 1, delay: 1.3 }}
-        className="absolute bottom-8 z-10 flex flex-col items-center gap-2"
+        transition={{ duration: 1, delay: 1.6 }}
+        className="flex-1 flex flex-col items-center justify-end pb-8"
       >
-        <span className="font-sans text-[9px] tracking-[0.35em] text-[#CCCCCC] uppercase">Scroll</span>
         <motion.div
           animate={{ y: [0, 5, 0] }}
-          transition={{ repeat: Infinity, duration: 1.8, ease: "easeInOut" }}
+          transition={{ repeat: Infinity, duration: 2.4, ease: "easeInOut" }}
         >
-          <ChevronDown size={14} className="text-[#C9A96E]/50" />
+          <ChevronDown size={14} className="text-[#CCCCCC]" />
         </motion.div>
       </motion.div>
     </section>

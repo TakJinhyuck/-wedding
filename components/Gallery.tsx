@@ -16,41 +16,40 @@ export default function Gallery() {
   const [selected, setSelected] = useState<number | null>(null);
 
   return (
-    <section className="py-20" style={{ backgroundColor: "#FDFDFD" }}>
-      <FadeIn className="px-6">
-        <SectionHeader en="Gallery" ko="우리의 이야기" />
+    <section className="py-16 bg-white border-t border-[#F2F2F2]">
+      <FadeIn className="px-8">
+        <SectionHeader title="GALLERY" />
       </FadeIn>
 
-      {/* 그리드: 첫 번째 사진 전체 너비(세로), 나머지 4장 2열 */}
-      <FadeIn delay={0.1} className="px-4 max-w-sm mx-auto">
-        {/* 첫 번째 사진: 세로형 전체 너비 */}
+      <FadeIn delay={0.1} className="px-5 max-w-sm mx-auto">
+        {/* 첫 사진: 전체 너비, 세로형 */}
         <button
           onClick={() => setSelected(1)}
-          className="w-full block aspect-[3/4] rounded-2xl overflow-hidden bg-[#E8E0D8] mb-2 active:opacity-90"
+          className="w-full block aspect-[3/4] overflow-hidden bg-[#F5F3F0] rounded-sm mb-1.5"
           aria-label="웨딩 사진 1 크게 보기"
         >
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src={PHOTOS[0].src}
             alt={PHOTOS[0].alt}
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover transition-transform duration-500 hover:scale-[1.02]"
           />
         </button>
 
-        {/* 나머지 4장: 2열 정사각형 그리드 */}
-        <div className="grid grid-cols-2 gap-2">
+        {/* 나머지 4장: 2열 */}
+        <div className="grid grid-cols-2 gap-1.5">
           {PHOTOS.slice(1).map((photo) => (
             <button
               key={photo.id}
               onClick={() => setSelected(photo.id)}
-              className="aspect-square rounded-xl overflow-hidden bg-[#E8E0D8] active:opacity-90"
+              className="aspect-square overflow-hidden bg-[#F5F3F0] rounded-sm"
               aria-label={`웨딩 사진 ${photo.id} 크게 보기`}
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={photo.src}
                 alt={photo.alt}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover transition-transform duration-500 hover:scale-[1.02]"
               />
             </button>
           ))}
@@ -64,23 +63,23 @@ export default function Gallery() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.2 }}
-            className="fixed inset-0 z-50 bg-black/80 flex items-center justify-center p-5"
+            transition={{ duration: 0.25 }}
+            className="fixed inset-0 z-50 bg-black/85 flex items-center justify-center p-6"
             onClick={() => setSelected(null)}
           >
             <button
-              className="absolute top-5 right-5 w-9 h-9 flex items-center justify-center rounded-full bg-white/10 text-white/70 hover:text-white"
+              className="absolute top-5 right-5 w-9 h-9 flex items-center justify-center text-white/50 hover:text-white transition-colors"
               onClick={() => setSelected(null)}
               aria-label="닫기"
             >
-              <X size={18} />
+              <X size={20} />
             </button>
             <motion.div
-              initial={{ scale: 0.94, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.94, opacity: 0 }}
-              transition={{ duration: 0.2 }}
-              className="w-full max-w-xs aspect-[3/4] rounded-2xl overflow-hidden bg-[#E8E0D8]"
+              initial={{ opacity: 0, scale: 0.96 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.96 }}
+              transition={{ duration: 0.25 }}
+              className="w-full max-w-xs aspect-[3/4] overflow-hidden bg-[#F0EDE8] rounded-sm"
               onClick={(e) => e.stopPropagation()}
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}

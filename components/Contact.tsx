@@ -24,17 +24,20 @@ const BRIDE_SIDE: Person[] = [
 
 function PersonRow({ person }: { person: Person }) {
   return (
-    <div className="flex items-center justify-between gap-2 py-2.5 border-b border-[#F5F0EB] last:border-0">
-      <div className="min-w-0">
-        <p className="font-sans text-[10px] text-[#AAAAAA] tracking-wide">{person.role}</p>
-        <p className="font-sans text-[13px] text-[#333333] font-medium">{person.name}</p>
+    <div className="flex items-center justify-between py-3 border-b border-[#F5F5F5] last:border-0">
+      <div>
+        <p className="font-sans text-[10px] tracking-widest text-[#BBBBBB] uppercase mb-0.5">
+          {person.role}
+        </p>
+        <p className="font-sans text-[13px] text-[#444444]">{person.name}</p>
       </div>
+      {/* Outline 전화 버튼 */}
       <a
         href={`tel:${person.phone.replace(/-/g, "")}`}
         aria-label={`${person.name}에게 전화하기`}
-        className="shrink-0 w-8 h-8 rounded-full bg-[#FAF8F5] border border-[#E8E0D8] flex items-center justify-center active:bg-[#F0EBE3] transition-colors"
+        className="w-9 h-9 rounded-full border border-[#E8E8E8] flex items-center justify-center text-[#AAAAAA] hover:border-[#C9A96E] hover:text-[#C9A96E] transition-colors"
       >
-        <Phone size={13} className="text-[#C9A96E]" />
+        <Phone size={13} />
       </a>
     </div>
   );
@@ -42,11 +45,11 @@ function PersonRow({ person }: { person: Person }) {
 
 function ContactGroup({ title, persons }: { title: string; persons: Person[] }) {
   return (
-    <div className="bg-white rounded-2xl border border-[#E8E0D8] overflow-hidden">
-      <div className="px-4 py-3 border-b border-[#F5F0EB] bg-[#FAF8F5]">
-        <p className="font-sans text-[11px] tracking-[0.2em] text-[#C9A96E] text-center">{title}</p>
-      </div>
-      <div className="px-4">
+    <div>
+      <p className="font-sans text-[10px] tracking-[0.35em] text-[#AAAAAA] uppercase mb-2">
+        {title}
+      </p>
+      <div>
         {persons.map((p) => (
           <PersonRow key={p.role} person={p} />
         ))}
@@ -57,13 +60,13 @@ function ContactGroup({ title, persons }: { title: string; persons: Person[] }) 
 
 export default function Contact() {
   return (
-    <section className="py-20 px-6" style={{ backgroundColor: "#FDFDFD" }}>
+    <section className="py-16 px-8 bg-white border-t border-[#F2F2F2]">
       <div className="max-w-sm mx-auto">
         <FadeIn>
-          <SectionHeader en="Contact" ko="연락처" />
+          <SectionHeader title="CONTACT" />
         </FadeIn>
 
-        <FadeIn delay={0.1} className="grid grid-cols-2 gap-3">
+        <FadeIn delay={0.1} className="space-y-8">
           <ContactGroup title="신랑측" persons={GROOM_SIDE} />
           <ContactGroup title="신부측" persons={BRIDE_SIDE} />
         </FadeIn>

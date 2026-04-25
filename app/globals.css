@@ -5,23 +5,18 @@
 :root {
   --font-cormorant: "Cormorant Garamond", Georgia, serif;
   --font-noto: "Noto Sans KR", sans-serif;
-  --color-bg: #FDFDFD;
-  --color-bg-alt: #FAF8F5;
-  --color-text: #333333;
-  --color-muted: #888888;
-  --color-accent: #C9A96E;
-  --color-border: #E8E0D8;
 }
 
 html { scroll-behavior: smooth; }
 
 body {
-  background-color: var(--color-bg);
-  color: var(--color-text);
+  background-color: #FFFFFF;
+  color: #444444;
   font-family: var(--font-noto);
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 ::-webkit-scrollbar { width: 3px; }
-::-webkit-scrollbar-track { background: #F5F0EB; }
-::-webkit-scrollbar-thumb { background: #D9C5A8; border-radius: 2px; }
+::-webkit-scrollbar-track { background: #F8F8F8; }
+::-webkit-scrollbar-thumb { background: #DDDDDD; border-radius: 2px; }
