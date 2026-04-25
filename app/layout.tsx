@@ -18,6 +18,7 @@ const notoSansKR = Noto_Sans_KR({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://wedding.vercel.app"),
+  viewport: "width=device-width, initial-scale=1, maximum-scale=1",
   title: "탁진혁 ♥ 조수민 결혼합니다",
   description: "2026년 9월 13일 일요일 · 더 컨벤션 잠실",
   openGraph: {
