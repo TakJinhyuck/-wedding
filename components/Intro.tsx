@@ -12,9 +12,9 @@ export default function Intro() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 2, ease: "easeOut" }}
-        className="px-7 pt-14"
+        className="px-10 pt-12"
       >
-        <div className="aspect-[3/4] overflow-hidden bg-[#EDEAE6] w-full">
+        <div className="w-full overflow-hidden bg-[#EDEAE6]" style={{ height: 300 }}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src="/images/photo-1.jpeg"
