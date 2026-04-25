@@ -5,7 +5,7 @@ interface Props {
 
 export default function SectionHeader({ title, sub }: Props) {
   return (
-    <div className="text-center mb-12">
+    <div className="text-center mb-8">
       {sub && (
         <p
           className="font-sans text-[9px] tracking-[0.6em] uppercase mb-3"

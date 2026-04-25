@@ -107,7 +107,7 @@ export default function Account() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <section className="py-24 px-8" style={{ backgroundColor: "#F7F8F9" }}>
+    <section className="py-14 px-8" style={{ backgroundColor: "#F7F8F9" }}>
       <div className="max-w-xs mx-auto">
 
         <FadeIn>
@@ -116,7 +116,7 @@ export default function Account() {
 
         <FadeIn delay={0.1}>
           <p
-            className="font-sans text-[12px] tracking-wide leading-[2.1] text-center mb-8"
+            className="font-sans text-[12px] tracking-wide leading-[1.9] text-center mb-6"
             style={{ color: "#AAAAAA", wordBreak: "keep-all" }}
           >
             축하의 마음을 전하고 싶으신 분들을 위해<br />

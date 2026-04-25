@@ -74,7 +74,7 @@ function ContactGroup({ title, persons }: { title: string; persons: Person[] }) 
 
 export default function Contact() {
   return (
-    <section className="py-24 px-8 bg-white">
+    <section className="py-14 px-8 bg-white">
       <div className="max-w-xs mx-auto">
 
         <FadeIn>

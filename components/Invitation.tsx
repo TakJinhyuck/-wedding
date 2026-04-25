@@ -5,7 +5,7 @@ import SectionHeader from "@/components/ui/SectionHeader";
 
 export default function Invitation() {
   return (
-    <section className="py-24 px-8" style={{ backgroundColor: "#F7F8F9" }}>
+    <section className="py-14 px-8" style={{ backgroundColor: "#F7F8F9" }}>
       <div className="max-w-xs mx-auto">
 
         <FadeIn>
@@ -14,7 +14,7 @@ export default function Invitation() {
 
         <FadeIn delay={0.15} className="text-center">
           <p
-            className="font-nanum text-[15px] leading-[2.5] tracking-wide"
+            className="font-nanum text-[15px] leading-[2.2] tracking-wide"
             style={{ color: "#555555", wordBreak: "keep-all" }}
           >
             서로가 마주 보며 다져온 사랑을<br />
@@ -25,7 +25,7 @@ export default function Invitation() {
           </p>
         </FadeIn>
 
-        <FadeIn delay={0.25} className="mt-12 text-center">
+        <FadeIn delay={0.25} className="mt-8 text-center">
           <div
             className="mx-auto mb-8"
             style={{ width: 20, height: 1, backgroundColor: "#DEDEDE" }}

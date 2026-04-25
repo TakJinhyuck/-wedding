@@ -16,31 +16,22 @@ export default function Gallery() {
   const [selected, setSelected] = useState<number | null>(null);
 
   return (
-    <section className="py-24" style={{ backgroundColor: "#F7F8F9" }}>
+    <section className="py-14" style={{ backgroundColor: "#F7F8F9" }}>
 
       <FadeIn className="px-8">
         <SectionHeader sub="GALLERY" title="갤러리" />
       </FadeIn>
 
-      <FadeIn delay={0.12} className="px-7 max-w-sm mx-auto">
-        {/* 첫 사진: 전체 너비 세로형 */}
-        <button
-          onClick={() => setSelected(1)}
-          className="w-full block aspect-[3/4] overflow-hidden"
-          style={{ backgroundColor: "#EDEAE6" }}
-          aria-label="웨딩 사진 1 크게 보기"
+      {/* 5장 모두 2열 정사각형 균등 그리드 */}
+      <FadeIn delay={0.12} className="px-4">
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(2, 1fr)",
+            gap: 2,
+          }}
         >
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src={PHOTOS[0].src}
-            alt={PHOTOS[0].alt}
-            className="w-full h-full object-cover transition-transform duration-700 hover:scale-[1.02]"
-          />
-        </button>
-
-        {/* 나머지 4장: 2열 정사각형 */}
-        <div className="grid grid-cols-2 gap-1 mt-1">
-          {PHOTOS.slice(1).map((photo) => (
+          {PHOTOS.map((photo) => (
             <button
               key={photo.id}
               onClick={() => setSelected(photo.id)}

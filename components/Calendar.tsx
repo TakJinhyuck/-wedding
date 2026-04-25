@@ -16,7 +16,7 @@ const DATE_CELLS: (number | null)[] = [
 
 export default function Calendar() {
   return (
-    <section className="py-24 px-8 bg-white">
+    <section className="py-14 px-8 bg-white">
       <motion.div
         className="max-w-xs mx-auto"
         initial={{ opacity: 0, y: 16 }}
