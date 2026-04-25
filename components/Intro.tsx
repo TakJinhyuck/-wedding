@@ -3,14 +3,19 @@
 import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 
+// 1169 템플릿 800px 기준 → 430px 카드 비율(0.5375)로 스케일
+// 커버 전체 높이: 1423 × 0.5375 ≈ 765px
+// 사진 시작 y: 230 × 0.5375 ≈ 124px
+// 사진 크기: 734×769 × 0.5375 ≈ 394×413px
+
 export default function Intro() {
   return (
-    <section className="min-h-screen bg-white flex flex-col">
+    <section className="bg-white">
 
-      {/* 상단 여백 — 1169 기준 top:230/800 비율 */}
-      <div style={{ height: 100 }} />
+      {/* 상단 여백 124px */}
+      <div style={{ height: 124 }} />
 
-      {/* 커버 사진 — 1169 기준 734×769 비율 (거의 정사각형) */}
+      {/* 커버 사진 */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -30,15 +35,15 @@ export default function Intro() {
         </div>
       </motion.div>
 
-      {/* 이름 — 신랑 우측정렬 | 세로선 | 신부 좌측정렬 */}
+      {/* 이름 — 신랑 우정렬 | 세로선 | 신부 좌정렬 */}
       <motion.div
-        initial={{ opacity: 0, y: 10 }}
+        initial={{ opacity: 0, y: 8 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1.0, delay: 0.8, ease: "easeOut" }}
-        className="flex items-center justify-center mt-7 px-8"
-        style={{ gap: 0 }}
+        className="flex items-center justify-center px-8"
+        style={{ marginTop: 32 }}
       >
-        <div style={{ flex: 1, textAlign: "right", paddingRight: 16 }}>
+        <div style={{ flex: 1, textAlign: "right", paddingRight: 14 }}>
           <span
             className="font-nanum font-bold"
             style={{ fontSize: 22, letterSpacing: "0.25em", color: "#333333" }}
@@ -47,7 +52,7 @@ export default function Intro() {
           </span>
         </div>
         <div style={{ width: 1, height: 22, backgroundColor: "#DDDDDD", flexShrink: 0 }} />
-        <div style={{ flex: 1, textAlign: "left", paddingLeft: 16 }}>
+        <div style={{ flex: 1, textAlign: "left", paddingLeft: 14 }}>
           <span
             className="font-nanum font-bold"
             style={{ fontSize: 22, letterSpacing: "0.25em", color: "#333333" }}
@@ -62,7 +67,8 @@ export default function Intro() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1.0, delay: 1.1, ease: "easeOut" }}
-        className="text-center mt-4"
+        className="text-center"
+        style={{ marginTop: 18 }}
       >
         <p
           className="font-nanum"
@@ -71,8 +77,8 @@ export default function Intro() {
           2026. 09. 13 SUN PM 02:30
         </p>
         <p
-          className="font-sans mt-1.5"
-          style={{ fontSize: 11, letterSpacing: "0.08em", color: "#888888" }}
+          className="font-sans"
+          style={{ fontSize: 11, letterSpacing: "0.08em", color: "#888888", marginTop: 5 }}
         >
           더 컨벤션 잠실 · 3층 그랜드볼룸
         </p>
@@ -83,7 +89,8 @@ export default function Intro() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1, delay: 1.8 }}
-        className="flex-1 flex flex-col items-center justify-end pb-8"
+        className="flex justify-center"
+        style={{ marginTop: 32, paddingBottom: 40 }}
       >
         <motion.div
           animate={{ y: [0, 5, 0] }}
