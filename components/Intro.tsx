@@ -5,51 +5,47 @@ import { ChevronDown } from "lucide-react";
 
 export default function Intro() {
   return (
-    <section className="relative h-screen w-full overflow-hidden flex flex-col items-center justify-center">
-      {/* 배경 그라디언트 (실제 사진으로 교체 가능) */}
-      <div
-        className="absolute inset-0 bg-gradient-to-b from-beige-200 via-beige-100 to-beige-50"
-        aria-hidden
-      />
+    <section className="relative h-screen w-full flex flex-col items-center justify-center overflow-hidden bg-[#FAF8F5]">
+      {/* 배경 텍스처 원 */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[340px] h-[340px] rounded-full border border-[#E8D5B8]/40" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[280px] h-[280px] rounded-full border border-[#E8D5B8]/30" />
 
-      {/* 장식 원 */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 rounded-full border border-beige-300/60 opacity-50" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 rounded-full border border-beige-200/40 opacity-40" />
-
-      {/* 사진 플레이스홀더 */}
+      {/* 사진 */}
       <motion.div
-        initial={{ opacity: 0, scale: 0.92 }}
+        initial={{ opacity: 0, scale: 0.94 }}
         animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 1.2, ease: "easeOut" }}
-        className="relative z-10 w-48 h-64 rounded-2xl bg-beige-200 border border-beige-300 shadow-lg overflow-hidden mb-8 flex items-center justify-center"
+        transition={{ duration: 1.4, ease: [0.22, 1, 0.36, 1] }}
+        className="relative z-10 w-44 h-60 rounded-[20px] bg-[#E8E0D8] shadow-[0_8px_40px_rgba(0,0,0,0.08)] overflow-hidden mb-9 flex items-center justify-center"
       >
-        <span className="text-beige-400 text-sm font-sans tracking-wider">PHOTO</span>
+        <span className="font-sans text-[10px] tracking-[0.3em] text-[#C9A96E]/60 uppercase">Photo</span>
       </motion.div>
 
-      {/* 이름 & 날짜 */}
+      {/* 이름 */}
       <motion.div
-        initial={{ opacity: 0, y: 24 }}
+        initial={{ opacity: 0, y: 16 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1, delay: 0.4, ease: "easeOut" }}
-        className="relative z-10 text-center px-6"
+        transition={{ duration: 1, delay: 0.35, ease: [0.22, 1, 0.36, 1] }}
+        className="relative z-10 text-center px-8"
       >
-        <p className="font-sans text-xs tracking-[0.3em] text-warm-brown/60 mb-3 uppercase">
+        <p className="font-sans text-[10px] tracking-[0.45em] text-[#C9A96E] mb-4 uppercase">
           We Are Getting Married
         </p>
 
-        <h1 className="font-serif text-5xl font-light text-warm-dark leading-tight">
+        <h1 className="font-serif font-light text-[#333333] leading-none" style={{ fontSize: "clamp(36px, 9vw, 52px)", letterSpacing: "0.15em" }}>
           탁진혁
-          <span className="mx-3 text-beige-400 text-3xl">♥</span>
+          <span className="mx-3 text-[#C9A96E]" style={{ fontSize: "0.55em" }}>♥</span>
           조수민
         </h1>
 
-        <div className="mt-5 divider">
-          <span className="font-sans text-xs tracking-[0.2em] text-warm-brown/70">
-            2026 . 09 . 13 SUN
-          </span>
+        <div className="mt-6 flex items-center justify-center gap-3">
+          <div className="h-px w-8 bg-[#E8D5B8]" />
+          <p className="font-sans text-[11px] tracking-[0.25em] text-[#888888]">
+            2026 · 09 · 13 · SUN
+          </p>
+          <div className="h-px w-8 bg-[#E8D5B8]" />
         </div>
 
-        <p className="mt-3 font-sans text-xs text-warm-brown/60 tracking-wider">
+        <p className="mt-3 font-sans text-[11px] tracking-[0.2em] text-[#AAAAAA]">
           더 컨벤션 잠실
         </p>
       </motion.div>
@@ -58,17 +54,15 @@ export default function Intro() {
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 1, delay: 1.2 }}
+        transition={{ duration: 1, delay: 1.3 }}
         className="absolute bottom-8 z-10 flex flex-col items-center gap-2"
       >
-        <span className="font-sans text-[10px] tracking-[0.25em] text-warm-brown/40 uppercase">
-          Scroll
-        </span>
+        <span className="font-sans text-[9px] tracking-[0.35em] text-[#CCCCCC] uppercase">Scroll</span>
         <motion.div
-          animate={{ y: [0, 6, 0] }}
-          transition={{ repeat: Infinity, duration: 1.6, ease: "easeInOut" }}
+          animate={{ y: [0, 5, 0] }}
+          transition={{ repeat: Infinity, duration: 1.8, ease: "easeInOut" }}
         >
-          <ChevronDown size={16} className="text-beige-400" />
+          <ChevronDown size={14} className="text-[#C9A96E]/50" />
         </motion.div>
       </motion.div>
     </section>
