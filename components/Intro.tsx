@@ -15,15 +15,12 @@ export default function Intro() {
         className="px-7 pt-14"
       >
         <div className="aspect-[3/4] overflow-hidden bg-[#EDEAE6] w-full">
-          {/* /public/images/ 의 실제 사진으로 교체 */}
-          <div className="w-full h-full flex items-center justify-center">
-            <span
-              className="font-sans text-[9px] tracking-[0.4em] uppercase"
-              style={{ color: "#CCCCCC" }}
-            >
-              Photo
-            </span>
-          </div>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/images/photo-1.jpeg"
+            alt="탁진혁 & 조수민"
+            className="w-full h-full object-cover"
+          />
         </div>
       </motion.div>
 

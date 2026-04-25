@@ -10,10 +10,9 @@ import Footer from "@/components/Footer";
 export default function Home() {
   return (
     // 외부: 데스크탑에서 양쪽 여백 색상
-    <div className="min-h-screen" style={{ backgroundColor: "#E8E5E0" }}>
-      {/* 내부: 모바일 카드 최대 430px, 화면 중앙 고정 */}
+    <div className="min-h-screen flex justify-center" style={{ backgroundColor: "#E8E5E0" }}>
       <main
-        className="w-full min-h-screen mx-auto bg-white"
+        className="w-full min-h-screen bg-white"
         style={{ maxWidth: 430 }}
       >
         <Intro />
