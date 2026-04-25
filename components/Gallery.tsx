@@ -5,19 +5,15 @@ import { useState } from "react";
 import { X } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
-const PHOTOS = Array.from({ length: 9 }, (_, i) => ({
+const PHOTOS = Array.from({ length: 5 }, (_, i) => ({
   id: i + 1,
-  src: `/images/photo-${i + 1}.jpg`,  // null → 경로로 변경
+  src: `/images/photo-${i + 1}.jpeg`,
   alt: `웨딩 사진 ${i + 1}`,
 }));
 
 const GRID_SPANS = [
   "col-span-2 row-span-2",
   "col-span-1 row-span-1",
-  "col-span-1 row-span-1",
-  "col-span-1 row-span-1",
-  "col-span-1 row-span-1",
-  "col-span-1 row-span-2",
   "col-span-1 row-span-1",
   "col-span-1 row-span-1",
   "col-span-2 row-span-1",
@@ -42,7 +38,7 @@ export default function Gallery() {
         </div>
 
         {/* 그리드 */}
-        <div className="px-3 grid grid-cols-3 grid-rows-4 gap-1.5 max-w-sm mx-auto auto-rows-[90px]">
+        <div className="px-3 grid grid-cols-3 grid-rows-3 gap-1.5 max-w-sm mx-auto auto-rows-[90px]">
           {PHOTOS.map((photo, idx) => (
             <motion.button
               key={photo.id}
