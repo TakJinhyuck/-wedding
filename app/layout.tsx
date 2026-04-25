@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, Noto_Sans_KR } from "next/font/google";
+import { Cormorant_Garamond, Noto_Sans_KR, Nanum_Myeongjo } from "next/font/google";
 import "./globals.css";
 
 const cormorant = Cormorant_Garamond({
@@ -16,6 +16,15 @@ const notoSansKR = Noto_Sans_KR({
   display: "swap",
 });
 
+// 바른손 1169 핵심 서체 — 한국 전통 명조
+const nanumMyeongjo = Nanum_Myeongjo({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  variable: "--font-nanum",
+  display: "swap",
+  preload: false,
+});
+
 export const metadata: Metadata = {
   metadataBase: new URL("https://wedding.vercel.app"),
   viewport: "width=device-width, initial-scale=1, maximum-scale=1",
@@ -28,13 +37,12 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="ko" className={`${cormorant.variable} ${notoSansKR.variable}`}>
+    <html
+      lang="ko"
+      className={`${cormorant.variable} ${notoSansKR.variable} ${nanumMyeongjo.variable}`}
+    >
       <body>{children}</body>
     </html>
   );

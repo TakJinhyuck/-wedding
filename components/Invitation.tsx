@@ -5,17 +5,17 @@ import SectionHeader from "@/components/ui/SectionHeader";
 
 export default function Invitation() {
   return (
-    <section className="py-24 px-8 bg-[#F9F9F9]">
+    <section className="py-24 px-8" style={{ backgroundColor: "#F7F8F9" }}>
       <div className="max-w-xs mx-auto">
 
         <FadeIn>
-          <SectionHeader title="INVITATION" />
+          <SectionHeader sub="INVITATION" title="초대합니다" />
         </FadeIn>
 
         <FadeIn delay={0.15} className="text-center">
           <p
-            className="font-sans text-[13px] leading-[2.4] tracking-wide text-[#555555]"
-            style={{ wordBreak: "keep-all" }}
+            className="font-nanum text-[15px] leading-[2.5] tracking-wide"
+            style={{ color: "#555555", wordBreak: "keep-all" }}
           >
             서로가 마주 보며 다져온 사랑을<br />
             이제 함께 걸어갈 큰 사랑으로 키우고자 합니다.<br />
@@ -25,15 +25,24 @@ export default function Invitation() {
           </p>
         </FadeIn>
 
-        <FadeIn delay={0.25} className="mt-12 text-center space-y-2.5">
-          <div className="w-5 h-px bg-[#E0E0E0] mx-auto mb-8" />
-          <p className="font-sans text-[11px] tracking-[0.2em] text-[#BBBBBB]">
+        <FadeIn delay={0.25} className="mt-12 text-center">
+          <div
+            className="mx-auto mb-8"
+            style={{ width: 20, height: 1, backgroundColor: "#DEDEDE" }}
+          />
+          <p
+            className="font-sans text-[11px] tracking-[0.2em] mb-2"
+            style={{ color: "#AAAAAA" }}
+          >
             탁○○ · 탁○○의 아들&ensp;
-            <span className="text-[#666666] tracking-normal">탁진혁</span>
+            <span style={{ color: "#666666" }}>탁진혁</span>
           </p>
-          <p className="font-sans text-[11px] tracking-[0.2em] text-[#BBBBBB]">
+          <p
+            className="font-sans text-[11px] tracking-[0.2em]"
+            style={{ color: "#AAAAAA" }}
+          >
             조○○ · 조○○의 딸&ensp;
-            <span className="text-[#666666] tracking-normal">조수민</span>
+            <span style={{ color: "#666666" }}>조수민</span>
           </p>
         </FadeIn>
 
