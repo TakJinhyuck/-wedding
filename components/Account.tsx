@@ -107,7 +107,7 @@ export default function Account() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <section className="py-14 px-8" style={{ backgroundColor: "#F7F8F9" }}>
+    <section className="py-14 px-8" style={{ backgroundColor: "#F9F9FB" }}>
       <div className="max-w-xs mx-auto">
 
         <FadeIn>

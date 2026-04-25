@@ -16,7 +16,7 @@ const TRANSPORT = [
 
 export default function Location() {
   return (
-    <section className="py-14 px-8" style={{ backgroundColor: "#F7F8F9" }}>
+    <section className="py-14 px-6" style={{ backgroundColor: "#F9F9FB" }}>
       <div className="max-w-xs mx-auto">
 
         <FadeIn>
@@ -26,7 +26,7 @@ export default function Location() {
         {/* 지도 플레이스홀더 */}
         <FadeIn delay={0.08}>
           <div
-            className="w-full flex flex-col items-center justify-center mb-6"
+            className="w-full flex flex-col items-center justify-center mb-5"
             style={{ height: 160, backgroundColor: "#EDEAE6" }}
           >
             <MapPin size={16} style={{ color: "#C0B8B0", marginBottom: 6 }} />
@@ -39,15 +39,22 @@ export default function Location() {
           </div>
         </FadeIn>
 
-        {/* 지도 앱 버튼: 아웃라인 */}
+        {/* 지도 앱 버튼 — 1169 기준 pill 형태 (border-radius: 20px) */}
         <FadeIn delay={0.13}>
-          <div className="grid grid-cols-2 gap-3 mb-8">
+          <div className="flex justify-center gap-3 mb-6">
             <a
               href={NAVER_MAP_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center gap-1.5 py-3.5 font-sans text-[11px] tracking-[0.12em] transition-colors"
-              style={{ border: "1px solid #DDDDDD", color: "#666666" }}
+              className="flex items-center gap-1.5 font-sans text-[12px] font-bold tracking-[0.05em] transition-colors"
+              style={{
+                border: "1px solid #DDDDDD",
+                color: "#666666",
+                borderRadius: 20,
+                height: 38,
+                paddingLeft: 18,
+                paddingRight: 18,
+              }}
             >
               <Navigation size={11} />
               네이버 지도
@@ -56,8 +63,15 @@ export default function Location() {
               href={KAKAO_MAP_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center gap-1.5 py-3.5 font-sans text-[11px] tracking-[0.12em] transition-colors"
-              style={{ border: "1px solid #DDDDDD", color: "#666666" }}
+              className="flex items-center gap-1.5 font-sans text-[12px] font-bold tracking-[0.05em] transition-colors"
+              style={{
+                border: "1px solid #DDDDDD",
+                color: "#666666",
+                borderRadius: 20,
+                height: 38,
+                paddingLeft: 18,
+                paddingRight: 18,
+              }}
             >
               <Navigation size={11} />
               카카오 지도
@@ -68,7 +82,7 @@ export default function Location() {
         {/* 주소 */}
         <FadeIn delay={0.18}>
           <p
-            className="font-sans text-[12px] text-center leading-[2.1] mb-8"
+            className="font-sans text-[12px] text-center leading-[2.0] mb-6"
             style={{ color: "#888888" }}
           >
             서울특별시 송파구 올림픽로 240<br />
@@ -79,19 +93,19 @@ export default function Location() {
         {/* 교통 안내 */}
         <FadeIn delay={0.22}>
           <div
-            className="space-y-5 pt-7"
+            className="space-y-4 pt-6"
             style={{ borderTop: "1px solid #EEEEEE" }}
           >
             {TRANSPORT.map(({ label, desc }) => (
-              <div key={label} className="flex gap-6 items-start">
+              <div key={label} className="flex gap-5 items-start">
                 <span
-                  className="font-sans text-[9px] tracking-widest uppercase shrink-0"
-                  style={{ color: "#BBBBBB", width: 36, paddingTop: 2 }}
+                  className="font-sans text-[10px] font-bold shrink-0"
+                  style={{ color: "#888888", width: 32, paddingTop: 2 }}
                 >
                   {label}
                 </span>
                 <p
-                  className="font-sans text-[12px] leading-[2] whitespace-pre-line"
+                  className="font-sans text-[12px] leading-[1.9] whitespace-pre-line"
                   style={{ color: "#666666" }}
                 >
                   {desc}

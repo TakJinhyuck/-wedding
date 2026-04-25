@@ -16,19 +16,20 @@ export default function Gallery() {
   const [selected, setSelected] = useState<number | null>(null);
 
   return (
-    <section className="py-14" style={{ backgroundColor: "#F7F8F9" }}>
+    <section className="py-14 bg-white">
 
       <FadeIn className="px-8">
         <SectionHeader sub="GALLERY" title="갤러리" />
       </FadeIn>
 
-      {/* 5장 모두 2열 정사각형 균등 그리드 */}
-      <FadeIn delay={0.12} className="px-4">
+      {/* 3열 그리드 — 1169 기준 3% 패딩, 10px gap → 430px 카드 기준으로 스케일 */}
+      <FadeIn delay={0.1}>
         <div
           style={{
             display: "grid",
-            gridTemplateColumns: "repeat(2, 1fr)",
-            gap: 2,
+            gridTemplateColumns: "repeat(3, 1fr)",
+            gap: 6,
+            padding: "0 13px",
           }}
         >
           {PHOTOS.map((photo) => (
