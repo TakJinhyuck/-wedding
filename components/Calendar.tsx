@@ -16,19 +16,20 @@ const DAY_LABELS = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
 
 export default function Calendar() {
   return (
-    <section className="py-16 px-8 bg-white border-t border-[#F2F2F2]">
+    <section className="py-24 px-8 bg-white">
       <div className="max-w-xs mx-auto">
+
         <FadeIn>
           <SectionHeader title="DATE" />
         </FadeIn>
 
         <FadeIn delay={0.1}>
-          {/* 요일 헤더 */}
-          <div className="grid grid-cols-7 mb-2">
+          {/* 요일 헤더: 테두리 없이 텍스트만 */}
+          <div className="grid grid-cols-7 mb-3">
             {DAY_LABELS.map((d, i) => (
               <div
                 key={d}
-                className={`text-center font-sans text-[9px] tracking-widest pb-3 ${
+                className={`text-center font-sans text-[8.5px] tracking-widest pb-3 ${
                   i === 0 ? "text-[#D07070]" : i === 6 ? "text-[#6080C0]" : "text-[#CCCCCC]"
                 }`}
               >
@@ -37,7 +38,7 @@ export default function Calendar() {
             ))}
           </div>
 
-          {/* 날짜 그리드: 구분선 없이 숫자만 */}
+          {/* 날짜: 선 없이 숫자만 공중에 부유 */}
           {WEEKS.map((week, wi) => (
             <div key={wi} className="grid grid-cols-7">
               {week.map((day, di) => {
@@ -45,19 +46,21 @@ export default function Calendar() {
                 const isSun = di === 0;
                 const isSat = di === 6;
                 return (
-                  <div key={`${wi}-${di}`} className="flex items-center justify-center h-9">
+                  <div key={`${wi}-${di}`} className="flex items-center justify-center h-10">
                     {day !== null && (
                       isWedding ? (
-                        // 연한 베이지 원형 배경 강조
-                        <div className="w-8 h-8 rounded-full bg-[#C9A96E]/18 flex items-center justify-center">
-                          <span className="font-sans text-[13px] font-medium text-[#B08A50]">
+                        // 연한 베이지 원형 (#F3EDE8) 강조
+                        <div className="w-8 h-8 rounded-full bg-[#F3EDE8] flex items-center justify-center">
+                          <span className="font-sans text-[13px] font-medium text-[#A07840]">
                             {day}
                           </span>
                         </div>
                       ) : (
                         <span
-                          className={`font-sans text-[13px] ${
-                            isSun ? "text-[#D07070]" : isSat ? "text-[#6080C0]" : "text-[#444444]"
+                          className={`font-sans text-[13px] font-light ${
+                            isSun ? "text-[#D07070]"
+                            : isSat ? "text-[#6080C0]"
+                            : "text-[#333333]"
                           }`}
                         >
                           {day}
@@ -70,17 +73,21 @@ export default function Calendar() {
             </div>
           ))}
 
-          {/* 예식 상세 정보 */}
-          <div className="mt-8 pt-7 border-t border-[#F2F2F2] text-center space-y-1.5">
-            <p className="font-sans text-[13px] tracking-wide text-[#444444]">
+          {/* 예식 정보: 캘린더 바로 아래 */}
+          <div className="mt-10 text-center space-y-2">
+            <div className="w-5 h-px bg-[#E8E8E8] mx-auto mb-7" />
+            <p className="font-sans text-[13px] tracking-[0.18em] text-[#444444]">
               2026. 09. 13. 일요일
             </p>
-            <p className="font-sans text-[12px] text-[#888888]">오후 2시 30분</p>
-            <p className="font-sans text-[12px] text-[#888888]">
+            <p className="font-sans text-[12px] tracking-[0.12em] text-[#888888]">
+              오후 2시 30분
+            </p>
+            <p className="font-sans text-[12px] tracking-[0.1em] text-[#888888]">
               더 컨벤션 잠실 · 3층 그랜드볼룸
             </p>
           </div>
         </FadeIn>
+
       </div>
     </section>
   );

@@ -16,65 +16,67 @@ const TRANSPORT = [
 
 export default function Location() {
   return (
-    <section className="py-16 px-8 bg-white border-t border-[#F2F2F2]">
-      <div className="max-w-sm mx-auto">
+    <section className="py-24 px-8 bg-[#F9F9F9]">
+      <div className="max-w-xs mx-auto">
+
         <FadeIn>
           <SectionHeader title="LOCATION" />
         </FadeIn>
 
         {/* 지도 플레이스홀더 */}
         <FadeIn delay={0.08}>
-          <div className="w-full h-40 bg-[#F5F3F0] rounded-sm flex flex-col items-center justify-center mb-4">
-            <MapPin size={18} className="text-[#CCCCCC] mb-1.5" />
-            <span className="font-sans text-[10px] tracking-[0.25em] text-[#CCCCCC]">
+          <div className="w-full h-44 bg-[#EDEAE6] flex flex-col items-center justify-center mb-5">
+            <MapPin size={16} className="text-[#CCCCCC] mb-2" />
+            <span className="font-sans text-[9px] tracking-[0.3em] text-[#CCCCCC] uppercase">
               더 컨벤션 잠실
             </span>
           </div>
         </FadeIn>
 
-        {/* 지도 앱 버튼: Outline 스타일 */}
-        <FadeIn delay={0.13} className="grid grid-cols-2 gap-2.5 mb-7">
+        {/* 지도 앱 버튼: 아웃라인, 색상 없음 */}
+        <FadeIn delay={0.13} className="grid grid-cols-2 gap-3 mb-8">
           <a
             href={NAVER_MAP_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center justify-center gap-1.5 py-3 rounded-sm border border-[#E0E0E0] font-sans text-[11px] tracking-[0.1em] text-[#666666] hover:bg-[#F8F8F8] transition-colors"
+            className="flex items-center justify-center gap-1.5 py-3.5 border border-[#DDDDDD] font-sans text-[11px] tracking-[0.15em] text-[#777777] hover:bg-white transition-colors"
           >
-            <Navigation size={12} />
+            <Navigation size={11} />
             네이버 지도
           </a>
           <a
             href={KAKAO_MAP_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center justify-center gap-1.5 py-3 rounded-sm border border-[#E0E0E0] font-sans text-[11px] tracking-[0.1em] text-[#666666] hover:bg-[#F8F8F8] transition-colors"
+            className="flex items-center justify-center gap-1.5 py-3.5 border border-[#DDDDDD] font-sans text-[11px] tracking-[0.15em] text-[#777777] hover:bg-white transition-colors"
           >
-            <Navigation size={12} />
+            <Navigation size={11} />
             카카오 지도
           </a>
         </FadeIn>
 
         {/* 주소 */}
         <FadeIn delay={0.18}>
-          <p className="font-sans text-[12px] text-[#888888] text-center leading-[2] mb-7">
+          <p className="font-sans text-[12px] tracking-[0.08em] text-[#888888] text-center leading-[2.1] mb-8">
             서울특별시 송파구 올림픽로 240<br />
             롯데월드몰 6층 더 컨벤션 잠실
           </p>
         </FadeIn>
 
-        {/* 교통 안내: 레이블 + 설명 미니멀 배치 */}
-        <FadeIn delay={0.22} className="space-y-4 pt-6 border-t border-[#F2F2F2]">
+        {/* 교통 안내: 레이블 + 설명 */}
+        <FadeIn delay={0.22} className="space-y-5 pt-7 border-t border-[#EEEEEE]">
           {TRANSPORT.map(({ label, desc }) => (
-            <div key={label} className="flex gap-5 items-start">
-              <span className="font-sans text-[10px] tracking-widest text-[#AAAAAA] w-10 shrink-0 pt-0.5 uppercase">
+            <div key={label} className="flex gap-6 items-start">
+              <span className="font-sans text-[9px] tracking-widest text-[#BBBBBB] w-9 shrink-0 pt-0.5 uppercase">
                 {label}
               </span>
-              <p className="font-sans text-[12px] text-[#666666] leading-[1.9] whitespace-pre-line">
+              <p className="font-sans text-[12px] text-[#666666] leading-[2] whitespace-pre-line">
                 {desc}
               </p>
             </div>
           ))}
         </FadeIn>
+
       </div>
     </section>
   );

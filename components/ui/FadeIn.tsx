@@ -8,13 +8,14 @@ interface Props {
   className?: string;
 }
 
+// 천천히, 아주 부드럽게 올라오는 fade-in
 export default function FadeIn({ children, delay = 0, className = "" }: Props) {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 14 }}
+      initial={{ opacity: 0, y: 16 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.05 }}
-      transition={{ duration: 1.1, delay, ease: "easeOut" }}
+      viewport={{ once: true, amount: 0.04 }}
+      transition={{ duration: 1.2, delay, ease: [0.16, 1, 0.3, 1] }}
       className={className}
     >
       {children}

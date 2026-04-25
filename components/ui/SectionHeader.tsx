@@ -4,10 +4,11 @@ interface Props {
 
 export default function SectionHeader({ title }: Props) {
   return (
-    <div className="text-center mb-10">
-      <h2 className="font-sans text-[10px] tracking-[0.55em] text-[#AAAAAA] uppercase font-normal">
+    <div className="text-center mb-14">
+      <p className="font-sans text-[9px] tracking-[0.65em] text-[#BBBBBB] uppercase font-light">
         {title}
-      </h2>
+      </p>
+      <div className="mt-4 mx-auto w-6 h-px bg-[#E8E8E8]" />
     </div>
   );
 }

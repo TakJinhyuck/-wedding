@@ -14,8 +14,8 @@ interface AccountInfo {
 
 const GROOM_ACCOUNTS: AccountInfo[] = [
   { owner: "탁진혁 (신랑)", bank: "카카오뱅크", number: "3333-00-0000000" },
-  { owner: "탁○○ (아버지)", bank: "국민은행", number: "000000-00-000000" },
-  { owner: "탁○○ (어머니)", bank: "신한은행", number: "000-000-000000" },
+  { owner: "탁○○ (아버지)", bank: "국민은행",   number: "000000-00-000000" },
+  { owner: "탁○○ (어머니)", bank: "신한은행",   number: "000-000-000000" },
 ];
 
 const BRIDE_ACCOUNTS: AccountInfo[] = [
@@ -46,31 +46,19 @@ function CopyButton({ text }: { text: string }) {
     <button
       onClick={handleCopy}
       aria-label="계좌번호 복사"
-      className={`flex items-center gap-1 px-2.5 py-1.5 border rounded font-sans text-[10px] transition-all ${
+      className={`shrink-0 flex items-center gap-1 px-2.5 py-1.5 border font-sans text-[10px] tracking-wide transition-all ${
         copied
-          ? "border-[#88CC88] text-[#66AA66] bg-[#F5FFF5]"
-          : "border-[#E8E8E8] text-[#AAAAAA] hover:border-[#CCCCCC] hover:text-[#888888]"
+          ? "border-[#AACCAA] text-[#779977]"
+          : "border-[#E0E0E0] text-[#BBBBBB] hover:border-[#BBBBBB] hover:text-[#777777]"
       }`}
     >
       <AnimatePresence mode="wait" initial={false}>
         {copied ? (
-          <motion.span
-            key="check"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="flex items-center gap-1"
-          >
+          <motion.span key="check" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="flex items-center gap-1">
             <Check size={10} /> 복사됨
           </motion.span>
         ) : (
-          <motion.span
-            key="copy"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="flex items-center gap-1"
-          >
+          <motion.span key="copy" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="flex items-center gap-1">
             <Copy size={10} /> 복사
           </motion.span>
         )}
@@ -81,11 +69,11 @@ function CopyButton({ text }: { text: string }) {
 
 function AccountRow({ acc }: { acc: AccountInfo }) {
   return (
-    <div className="flex items-center justify-between py-3.5 border-b border-[#F5F5F5] last:border-0">
+    <div className="flex items-center justify-between py-4 border-b border-[#F2F2F2] last:border-0">
       <div>
-        <p className="font-sans text-[10px] text-[#BBBBBB] mb-0.5">{acc.owner}</p>
-        <p className="font-sans text-[12px] text-[#444444]">{acc.bank}</p>
-        <p className="font-sans text-[11px] text-[#888888] tracking-wider mt-0.5">{acc.number}</p>
+        <p className="font-sans text-[9px] tracking-widest text-[#CCCCCC] mb-0.5">{acc.owner}</p>
+        <p className="font-sans text-[13px] tracking-wide text-[#444444]">{acc.bank}</p>
+        <p className="font-sans text-[11px] tracking-[0.1em] text-[#999999] mt-0.5">{acc.number}</p>
       </div>
       <CopyButton text={acc.number} />
     </div>
@@ -95,7 +83,7 @@ function AccountRow({ acc }: { acc: AccountInfo }) {
 function AccountGroup({ title, accounts }: { title: string; accounts: AccountInfo[] }) {
   return (
     <div>
-      <p className="font-sans text-[10px] tracking-[0.35em] text-[#AAAAAA] uppercase mb-1">
+      <p className="font-sans text-[9px] tracking-[0.45em] text-[#BBBBBB] uppercase mb-1">
         {title}
       </p>
       {accounts.map((acc) => (
@@ -109,47 +97,51 @@ export default function Account() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <section className="py-16 px-8 bg-white border-t border-[#F2F2F2]">
-      <div className="max-w-sm mx-auto">
+    <section className="py-24 px-8 bg-[#F9F9F9]">
+      <div className="max-w-xs mx-auto">
+
         <FadeIn>
           <SectionHeader title="ACCOUNT" />
         </FadeIn>
 
-        <FadeIn delay={0.1} className="text-center mb-6">
-          <p className="font-sans text-[12px] text-[#AAAAAA] leading-[2]" style={{ wordBreak: "keep-all" }}>
+        <FadeIn delay={0.1} className="text-center mb-8">
+          <p
+            className="font-sans text-[12px] tracking-wide text-[#AAAAAA] leading-[2.1]"
+            style={{ wordBreak: "keep-all" }}
+          >
             축하의 마음을 전하고 싶으신 분들을 위해<br />
             계좌번호를 안내드립니다.
           </p>
         </FadeIn>
 
         <FadeIn delay={0.15}>
-          {/* 마음 전하실 곳 아코디언 토글 버튼 */}
+          {/* 마음 전하실 곳 토글 버튼: 아웃라인 스타일 */}
           <button
             onClick={() => setIsOpen((v) => !v)}
-            className="w-full flex items-center justify-between px-4 py-3.5 border border-[#E8E8E8] rounded-sm hover:bg-[#FAFAFA] transition-colors"
+            className="w-full flex items-center justify-between px-5 py-4 border border-[#DDDDDD] hover:bg-white transition-colors"
           >
-            <span className="font-sans text-[11px] tracking-[0.25em] text-[#666666]">
+            <span className="font-sans text-[11px] tracking-[0.3em] text-[#777777]">
               마음 전하실 곳
             </span>
             <motion.div
               animate={{ rotate: isOpen ? 180 : 0 }}
-              transition={{ duration: 0.35, ease: "easeInOut" }}
+              transition={{ duration: 0.4, ease: "easeInOut" }}
             >
-              <ChevronDown size={14} className="text-[#BBBBBB]" />
+              <ChevronDown size={13} className="text-[#CCCCCC]" />
             </motion.div>
           </button>
 
-          {/* 아코디언 콘텐츠 */}
+          {/* 아코디언: 부드럽게 펼쳐짐 */}
           <AnimatePresence>
             {isOpen && (
               <motion.div
                 initial={{ height: 0, opacity: 0 }}
                 animate={{ height: "auto", opacity: 1 }}
                 exit={{ height: 0, opacity: 0 }}
-                transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
+                transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
                 className="overflow-hidden"
               >
-                <div className="pt-6 space-y-7 border-x border-b border-[#E8E8E8] px-4 pb-4 rounded-b-sm">
+                <div className="bg-white border-x border-b border-[#DDDDDD] px-5 pt-6 pb-2 space-y-6">
                   <AccountGroup title="신랑측" accounts={GROOM_ACCOUNTS} />
                   <AccountGroup title="신부측" accounts={BRIDE_ACCOUNTS} />
                 </div>
@@ -157,6 +149,7 @@ export default function Account() {
             )}
           </AnimatePresence>
         </FadeIn>
+
       </div>
     </section>
   );
