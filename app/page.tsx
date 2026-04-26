@@ -11,8 +11,10 @@ import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
-    <div className="min-h-screen flex justify-center" style={{ backgroundColor: "#E8E5E0" }}>
-      <main className="w-full min-h-screen bg-white" style={{ maxWidth: 480 }}>
+    // 외부 배경: 연한 미색
+    <div className="min-h-screen flex justify-center" style={{ backgroundColor: "#F8F8F8" }}>
+      {/* 중앙 카드: max-w-[450px], shadow-xl */}
+      <main className="w-full min-h-screen bg-white shadow-xl" style={{ maxWidth: 450 }}>
         <Intro />
         <Invitation />
         <DDay />

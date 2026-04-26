@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import FadeIn from "@/components/ui/FadeIn";
+import SectionHeader from "@/components/ui/SectionHeader";
 
 const WEDDING = new Date(2026, 8, 13); // 2026년 9월 13일
 
@@ -25,40 +26,36 @@ export default function DDay() {
       <div className="text-center">
 
         <FadeIn>
-          <p className="font-sans text-[9px] tracking-[0.6em] uppercase mb-10" style={{ color: "#BBBBBB" }}>
-            D · DAY
+          <SectionHeader sub="D · DAY" title="웨딩 카운트다운" />
+
+          {/* 날짜 */}
+          <p className="font-nanum text-[13px] tracking-[0.15em] text-gray-400 mb-6">
+            2026. 09. 13
           </p>
 
           {/* 큰 숫자 */}
-          <div className="relative inline-flex items-end gap-1 mb-6">
-            <motion.span
-              key={days}
-              initial={{ opacity: 0, y: 8 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
-              className="font-serif italic"
-              style={{ fontSize: 80, lineHeight: 1, color: "#9A7040", letterSpacing: "-0.02em" }}
+          <motion.div
+            key={days}
+            initial={{ opacity: 0, y: 8 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="flex items-end justify-center gap-2 mb-6"
+          >
+            <span
+              className="font-serif italic leading-none"
+              style={{ fontSize: 88, color: "#C4A98E", letterSpacing: "-0.02em" }}
             >
               {days ?? "—"}
-            </motion.span>
-            <span
-              className="font-nanum pb-3"
-              style={{ fontSize: 18, color: "#9A7040" }}
-            >
+            </span>
+            <span className="font-nanum text-xl pb-4" style={{ color: "#C4A98E" }}>
               일
             </span>
-          </div>
+          </motion.div>
 
-          <div className="mx-auto mb-7" style={{ width: 24, height: 1, backgroundColor: "#E0E0E0" }} />
-
-          <p
-            className="font-nanum text-[15px] leading-[2.0] tracking-[0.06em]"
-            style={{ color: "#555555" }}
-          >
+          {/* 감성 문구 — text-gray-400 text-xs */}
+          <p className="text-gray-400 text-xs tracking-[0.12em] leading-[2.0]">
             탁진혁 ❤️ 조수민<br />
-            <span className="font-sans text-[12px] tracking-[0.1em]" style={{ color: "#AAAAAA" }}>
-              예식일이 {days ?? "—"}일 남았습니다
-            </span>
+            기적 같은 만남, 결혼식이 {days ?? "—"}일 남았습니다
           </p>
         </FadeIn>
 

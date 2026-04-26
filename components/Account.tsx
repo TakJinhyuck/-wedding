@@ -146,7 +146,7 @@ export default function Account() {
   const [brideOpen, setBrideOpen] = useState(false);
 
   return (
-    <section className="py-20 px-6" style={{ backgroundColor: "#F9F9FB" }}>
+    <section className="py-20 px-6 bg-[#F9F9F9]">
       <div>
 
         <FadeIn>
