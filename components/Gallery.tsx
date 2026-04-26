@@ -21,24 +21,18 @@ export default function Gallery() {
   return (
     <section className="py-20 bg-white">
 
-      <FadeIn className="px-8">
+      <FadeIn className="px-6">
         <SectionHeader sub="GALLERY" title="갤러리" />
       </FadeIn>
 
+      {/* 3열 그리드 — Tailwind 클래스로 보장 */}
       <FadeIn delay={0.1}>
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(3, 1fr)",
-            gap: 4,
-            padding: "0 13px",
-          }}
-        >
+        <div className="grid grid-cols-3 gap-2 px-4">
           {PHOTOS.map((photo) => (
             <button
               key={photo.id}
               onClick={() => setSelected(photo.id)}
-              className="aspect-square overflow-hidden"
+              className="overflow-hidden rounded-md aspect-square"
               style={{ backgroundColor: "#EDEAE6" }}
               aria-label={`웨딩 사진 ${photo.id} 크게 보기`}
             >
@@ -46,14 +40,14 @@ export default function Gallery() {
               <img
                 src={photo.src}
                 alt={photo.alt}
-                className="w-full h-full object-cover transition-transform duration-700 hover:scale-[1.03]"
+                className="w-full h-full object-cover rounded-md transition-transform duration-500 hover:scale-[1.04]"
               />
             </button>
           ))}
         </div>
       </FadeIn>
 
-      {/* 라이트박스 — 스와이프 지원 */}
+      {/* 라이트박스 — 스와이프 + 화살표 */}
       <AnimatePresence>
         {selected !== null && (
           <motion.div
@@ -99,7 +93,7 @@ export default function Gallery() {
               </button>
             )}
 
-            {/* 사진 — drag로 스와이프 */}
+            {/* 사진 — drag 스와이프 */}
             <AnimatePresence mode="wait">
               <motion.div
                 key={selected}
@@ -114,7 +108,7 @@ export default function Gallery() {
                   if (offset.x < -60) goNext();
                   else if (offset.x > 60) goPrev();
                 }}
-                className="overflow-hidden cursor-grab active:cursor-grabbing"
+                className="overflow-hidden rounded-lg cursor-grab active:cursor-grabbing"
                 style={{ maxWidth: 300, width: "80vw", aspectRatio: "3/4", backgroundColor: "#1a1a1a" }}
                 onClick={(e) => e.stopPropagation()}
               >

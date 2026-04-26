@@ -41,8 +41,8 @@ export default function Share() {
   };
 
   return (
-    <section className="py-20 px-8 bg-white">
-      <div className="max-w-xs mx-auto">
+    <section className="py-20 px-6 bg-white">
+      <div>
 
         <FadeIn>
           <SectionHeader sub="SHARE" title="공유하기" />

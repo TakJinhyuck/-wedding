@@ -146,8 +146,8 @@ export default function Account() {
   const [brideOpen, setBrideOpen] = useState(false);
 
   return (
-    <section className="py-20 px-8" style={{ backgroundColor: "#F9F9FB" }}>
-      <div className="max-w-xs mx-auto">
+    <section className="py-20 px-6" style={{ backgroundColor: "#F9F9FB" }}>
+      <div>
 
         <FadeIn>
           <SectionHeader sub="ACCOUNT" title="마음 전하실 곳" />

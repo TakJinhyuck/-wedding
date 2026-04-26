@@ -16,9 +16,9 @@ const DATE_CELLS: (number | null)[] = [
 
 export default function Calendar() {
   return (
-    <section className="py-20 px-8" style={{ backgroundColor: "#F4F4F4" }}>
+    <section className="py-20 px-6" style={{ backgroundColor: "#F4F4F4" }}>
       <motion.div
-        className="max-w-xs mx-auto"
+        className=""
         initial={{ opacity: 0, y: 16 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.04 }}

@@ -21,8 +21,8 @@ export default function DDay() {
   }, []);
 
   return (
-    <section className="py-20 px-8 bg-white">
-      <div className="max-w-xs mx-auto text-center">
+    <section className="py-20 px-6 bg-white">
+      <div className="text-center">
 
         <FadeIn>
           <p className="font-sans text-[9px] tracking-[0.6em] uppercase mb-10" style={{ color: "#BBBBBB" }}>

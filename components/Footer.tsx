@@ -4,7 +4,7 @@ import FadeIn from "@/components/ui/FadeIn";
 
 export default function Footer() {
   return (
-    <footer className="py-16 px-8 bg-white" style={{ borderTop: "1px solid #F0F0F0" }}>
+    <footer className="py-20 px-6 bg-white" style={{ borderTop: "1px solid #F0F0F0" }}>
       <FadeIn className="text-center">
 
         {/* 한글 이름 — 나눔명조 */}

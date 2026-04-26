@@ -4,8 +4,8 @@ import FadeIn from "@/components/ui/FadeIn";
 
 export default function Invitation() {
   return (
-    <section className="py-20 px-8" style={{ backgroundColor: "#F4F4F4" }}>
-      <div className="max-w-xs mx-auto">
+    <section className="py-20 px-6" style={{ backgroundColor: "#F4F4F4" }}>
+      <div>
 
         <FadeIn className="text-center">
           <p className="font-sans text-[9px] tracking-[0.6em] uppercase mb-8" style={{ color: "#AAAAAA" }}>

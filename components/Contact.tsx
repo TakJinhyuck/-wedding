@@ -67,7 +67,7 @@ export default function Contact() {
   return (
     <section className="py-20 px-6" style={{ backgroundColor: "#F9F9FB" }}>
 
-      <FadeIn>
+      <FadeIn className="text-center">
         <SectionHeader sub="CONTACT" title="연락하기" />
       </FadeIn>
 

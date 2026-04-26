@@ -1,11 +1,11 @@
 interface Props {
-  title: string;       // 한글 또는 영문 제목
-  sub?: string;        // 상단 소제목 (영문 라벨)
+  title: string;
+  sub?: string;
 }
 
 export default function SectionHeader({ title, sub }: Props) {
   return (
-    <div className="text-center mb-8">
+    <div className="text-center mb-10">
       {sub && (
         <p
           className="font-sans text-[9px] tracking-[0.6em] uppercase mb-3"
@@ -15,8 +15,8 @@ export default function SectionHeader({ title, sub }: Props) {
         </p>
       )}
       <h2
-        className="font-nanum text-[20px] font-normal tracking-[0.1em]"
-        style={{ color: "#333333" }}
+        className="font-nanum font-normal tracking-widest"
+        style={{ fontSize: 20, color: "#333333" }}
       >
         {title}
       </h2>
