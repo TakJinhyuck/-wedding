@@ -16,7 +16,7 @@ const DATE_CELLS: (number | null)[] = [
 
 export default function Calendar() {
   return (
-    <section className="py-14 px-8" style={{ backgroundColor: "#F4F4F4" }}>
+    <section className="py-20 px-8" style={{ backgroundColor: "#F4F4F4" }}>
       <motion.div
         className="max-w-xs mx-auto"
         initial={{ opacity: 0, y: 16 }}
@@ -107,7 +107,7 @@ export default function Calendar() {
             2026년 9월 13일 일요일
           </p>
           <p className="font-sans text-[12px] tracking-[0.1em] mt-2" style={{ color: "#888888" }}>
-            오후 2시 30분
+            오전 11시 00분
           </p>
           <p className="font-sans text-[12px] tracking-[0.08em] mt-1.5" style={{ color: "#888888" }}>
             더 컨벤션 잠실 · 3층 그랜드볼룸

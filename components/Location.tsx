@@ -16,7 +16,7 @@ const TRANSPORT = [
 
 export default function Location() {
   return (
-    <section className="py-14 px-6" style={{ backgroundColor: "#F9F9FB" }}>
+    <section className="py-20 px-6" style={{ backgroundColor: "#F9F9FB" }}>
       <div className="max-w-xs mx-auto">
 
         <FadeIn>

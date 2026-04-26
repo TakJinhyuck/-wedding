@@ -3,29 +3,19 @@
 import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 
-// 1169 템플릿 800px 기준 → 430px 카드 비율(0.5375)로 스케일
-// 커버 전체 높이: 1423 × 0.5375 ≈ 765px
-// 사진 시작 y: 230 × 0.5375 ≈ 124px
-// 사진 크기: 734×769 × 0.5375 ≈ 394×413px
-
 export default function Intro() {
   return (
     <section className="bg-white">
 
-      {/* 상단 여백 124px */}
       <div style={{ height: 124 }} />
 
-      {/* 커버 사진 */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1.8, ease: "easeOut" }}
         className="px-[18px]"
       >
-        <div
-          className="w-full overflow-hidden bg-[#EDEAE6]"
-          style={{ aspectRatio: "734/769" }}
-        >
+        <div className="w-full overflow-hidden bg-[#EDEAE6]" style={{ aspectRatio: "734/769" }}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src="/images/photo-1.jpeg"
@@ -35,7 +25,6 @@ export default function Intro() {
         </div>
       </motion.div>
 
-      {/* 이름 — 신랑 우정렬 | 세로선 | 신부 좌정렬 */}
       <motion.div
         initial={{ opacity: 0, y: 8 }}
         animate={{ opacity: 1, y: 0 }}
@@ -44,25 +33,18 @@ export default function Intro() {
         style={{ marginTop: 32 }}
       >
         <div style={{ flex: 1, textAlign: "right", paddingRight: 14 }}>
-          <span
-            className="font-nanum font-bold"
-            style={{ fontSize: 22, letterSpacing: "0.25em", color: "#333333" }}
-          >
+          <span className="font-nanum font-bold" style={{ fontSize: 22, letterSpacing: "0.25em", color: "#333333" }}>
             탁진혁
           </span>
         </div>
         <div style={{ width: 1, height: 22, backgroundColor: "#DDDDDD", flexShrink: 0 }} />
         <div style={{ flex: 1, textAlign: "left", paddingLeft: 14 }}>
-          <span
-            className="font-nanum font-bold"
-            style={{ fontSize: 22, letterSpacing: "0.25em", color: "#333333" }}
-          >
+          <span className="font-nanum font-bold" style={{ fontSize: 22, letterSpacing: "0.25em", color: "#333333" }}>
             조수민
           </span>
         </div>
       </motion.div>
 
-      {/* 날짜 · 장소 */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -70,21 +52,14 @@ export default function Intro() {
         className="text-center"
         style={{ marginTop: 18 }}
       >
-        <p
-          className="font-nanum"
-          style={{ fontSize: 14, letterSpacing: "0.12em", color: "#555555" }}
-        >
-          2026. 09. 13 SUN PM 02:30
+        <p className="font-nanum" style={{ fontSize: 14, letterSpacing: "0.12em", color: "#555555" }}>
+          2026. 09. 13 (일) 오전 11:00
         </p>
-        <p
-          className="font-sans"
-          style={{ fontSize: 11, letterSpacing: "0.08em", color: "#888888", marginTop: 5 }}
-        >
+        <p className="font-sans" style={{ fontSize: 11, letterSpacing: "0.08em", color: "#888888", marginTop: 5 }}>
           더 컨벤션 잠실 · 3층 그랜드볼룸
         </p>
       </motion.div>
 
-      {/* 스크롤 유도 */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}

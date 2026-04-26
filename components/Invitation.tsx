@@ -4,14 +4,11 @@ import FadeIn from "@/components/ui/FadeIn";
 
 export default function Invitation() {
   return (
-    <section className="py-16 px-8" style={{ backgroundColor: "#F4F4F4" }}>
+    <section className="py-20 px-8" style={{ backgroundColor: "#F4F4F4" }}>
       <div className="max-w-xs mx-auto">
 
         <FadeIn className="text-center">
-          <p
-            className="font-sans text-[9px] tracking-[0.6em] uppercase mb-8"
-            style={{ color: "#AAAAAA" }}
-          >
+          <p className="font-sans text-[9px] tracking-[0.6em] uppercase mb-8" style={{ color: "#AAAAAA" }}>
             INVITATION
           </p>
           <p
@@ -26,25 +23,19 @@ export default function Invitation() {
           </p>
         </FadeIn>
 
-        <FadeIn delay={0.2} className="mt-10 text-center">
-          <div
-            className="mx-auto mb-6"
-            style={{ width: 20, height: 1, backgroundColor: "#CCCCCC" }}
-          />
-          <p
-            className="font-sans text-[11px] tracking-[0.2em] mb-2"
-            style={{ color: "#AAAAAA" }}
-          >
-            탁○○ · 탁○○의 아들&ensp;
-            <span style={{ color: "#666666" }}>탁진혁</span>
-          </p>
-          <p
-            className="font-sans text-[11px] tracking-[0.2em]"
-            style={{ color: "#AAAAAA" }}
-          >
-            조○○ · 조○○의 딸&ensp;
-            <span style={{ color: "#666666" }}>조수민</span>
-          </p>
+        <FadeIn delay={0.2} className="mt-12 text-center">
+          <div className="mx-auto mb-7" style={{ width: 20, height: 1, backgroundColor: "#CCCCCC" }} />
+
+          <div className="space-y-3">
+            <p className="font-sans text-[11px] tracking-[0.18em]" style={{ color: "#AAAAAA" }}>
+              탁○○ · 탁○○의 아들&ensp;
+              <span className="font-nanum text-[13px]" style={{ color: "#555555" }}>탁진혁</span>
+            </p>
+            <p className="font-sans text-[11px] tracking-[0.18em]" style={{ color: "#AAAAAA" }}>
+              조○○ · 조○○의 딸&ensp;
+              <span className="font-nanum text-[13px]" style={{ color: "#555555" }}>조수민</span>
+            </p>
+          </div>
         </FadeIn>
 
       </div>
